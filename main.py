@@ -10,5 +10,9 @@ app.secret_key = secrets.token_hex()
 def index():
     return make_response(render_template(template_name_or_list='index.html'))
 
+@app.route("/test")
+def test():
+    return make_response(render_template(template_name_or_list='test.html'))
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0")

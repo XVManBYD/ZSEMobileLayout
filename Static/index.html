@@ -1,10 +1,47 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
+    <!-- META -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ZSEMobileLayout</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Plan ZSE stworzony przez @grzybowski_byd</title>
+
+    <!-- LOCAL -->
+    <link href='{{ url_for("static", filename="mobile.css") }}' rel="stylesheet">
+    <link href='{{ url_for("static", filename="variables.css") }}' rel="stylesheet">
+    <!-- REMOTE -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <script>function nav_action(index) {
+        const r = document.querySelector(':root');
+        console.log(index)
+        r.style.setProperty("--move", `${(index - 1) * 20}vw`)
+        r.style.setProperty("--negative_move", `-${(index - 1) * 100}vw`)
+    }
+    </script>
 </head>
 <body>
-    Initial Commit
+<div id="container">
+    <div class="view" id="view1"></div>
+    <div class="view" id="view2"></div>
+    <div class="view" id="view3"></div>
+    <div class="view" id="view4"></div>
+    <div class="view" id="view5"></div>
+</div>
+<div id="nav">
+    {% set icon_type = "material-symbols-outlined" %}
+    {% set icons = ["calendar_month", "schedule", "campaign", "settings", "info"] %}
+    {% for icon in icons %}
+        <div class="nav_button" id="nav_button{{ loop.index }}" onclick="nav_action({{ loop.index }})">
+            <span class={{ icon_type }}>
+            {{ icon }}
+            </span>
+        </div>
+    {% endfor %}
+</div>
+<div id="cursor"></div>
 </body>
 </html>

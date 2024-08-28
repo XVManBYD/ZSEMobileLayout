@@ -1,0 +1,92 @@
+:root {
+    --item_width: 20vw;
+    --move: 0vw;
+    --negative_move: 0vw;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+}
+
+#container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 500vw;
+    padding: 0;
+    margin: 0;
+    translate: var(--negative_move) 0;
+    transition: translate 100ms;
+}
+
+#view1 {
+    background-color: #ff0008
+}
+
+#view2 {
+    background-color: #2fff00
+}
+
+#view3 {
+    background-color: #0022ff
+}
+
+#view4 {
+    background-color: #ff8000
+}
+
+#view5 {
+    background-color: #8400ff
+}
+
+.view {
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+}
+
+#nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: var(--item_width);
+    background-color: var(--main-color);
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    max-height: 100px;
+}
+
+.nav_button {
+    width: var(--item_width);
+    height: var(--item_width);
+    /*background-color: black;*/
+    /*border-radius: 50%;*/
+
+    text-align: center;
+}
+
+.nav_button * {
+    display: block;
+    margin: auto !important;
+}
+
+#cursor {
+    width: var(--item_width);
+    height: var(--item_width);
+    max-height: 100px;
+    max-width: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    translate: var(--move) 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    transition: translate 100ms;
+}
