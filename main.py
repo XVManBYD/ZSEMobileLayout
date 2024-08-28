@@ -1,4 +1,5 @@
 import secrets
+from calendar import weekday
 
 from flask import Flask, make_response, render_template
 
@@ -8,7 +9,8 @@ app.secret_key = secrets.token_hex()
 
 @app.route("/")
 def index():
-    return make_response(render_template(template_name_or_list='index.html'))
+    return make_response(render_template(template_name_or_list='index.html', weekday="0"))
+
 
 @app.route("/test")
 def test():
