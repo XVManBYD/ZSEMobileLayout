@@ -41,7 +41,7 @@ body {
     background-color: var(--main-color);
 }
 
-@media screen and (min-width: 31rem) {
+@media screen and (min-width: 33rem) {
     #nav {
         justify-content: center;
         column-gap: 2rem;

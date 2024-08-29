@@ -98,9 +98,24 @@ a[href] {
     background-color: var(--main-color);
     border-bottom: #fff2 solid 3px;
     z-index: 10;
+    padding: 0 1rem;
+}
+
+.weekday-nav-button {
+    display: flex;
+    width: 3rem;
 }
 
 #weekday-span {
-    color: white;
+    width: 15rem;
     font-size: 2em;
+    text-align: center;
+    color: white;
+    overflow: clip;
+}
+@media screen and (min-width: 33rem) {
+    #weekday-nav {
+        justify-content: center;
+        column-gap: 5rem;
+    }
 }
