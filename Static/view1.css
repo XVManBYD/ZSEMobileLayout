@@ -20,6 +20,7 @@ a[href] {
     display: none;
     overflow: scroll;
 }
+
 .shown {
     display: block;
 }
@@ -31,11 +32,13 @@ a[href] {
     font-size: .2rem;
     border-bottom: rgb(127, 127, 127) solid 2px;
 }
+
 .number {
     font-size: 13em;
     margin: 0 0.3em;
 }
-.hours{
+
+.hours {
     display: flex;
     font-size: 6em;
     flex-direction: column;
@@ -46,7 +49,7 @@ a[href] {
     margin-bottom: 0.16em;
 }
 
-.subject{
+.subject {
     margin-top: 0;
     font-size: 7em;
     margin-bottom: .1em;
@@ -57,11 +60,13 @@ a[href] {
     flex-direction: column;
     font-size: 1em;
     margin: 0;
- }
+}
+
 .lesson-text {
     display: flex;
     flex-direction: column;
 }
+
 .teacher_classroom {
     font-size: 5em;
     display: flex;
@@ -69,6 +74,7 @@ a[href] {
     margin: 0;
     color: var(--main-color);
 }
+
 .darker-text {
     filter: brightness(70%);
 }
@@ -76,7 +82,8 @@ a[href] {
 .repl-text {
     color: var(--main-color);
 }
-.repl-s  {
+
+.repl-s {
     text-decoration: line-through;
     text-decoration-thickness: 0.1em;
     text-decoration-color: var(--main-color);
@@ -92,6 +99,7 @@ a[href] {
     border-bottom: #fff2 solid 3px;
     z-index: 10;
 }
+
 #weekday-span {
     color: white;
     font-size: 2em;

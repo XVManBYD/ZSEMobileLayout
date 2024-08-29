@@ -41,8 +41,15 @@ body {
     background-color: var(--main-color);
 }
 
+@media screen and (min-width: 31rem) {
+    #nav {
+        justify-content: center;
+        column-gap: 2rem;
+    }
+}
+
 .nav_button {
-    width: 100%;
+    width: 5rem;
     height: 100%;
     display: flex;
 }
