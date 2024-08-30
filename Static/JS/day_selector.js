@@ -4,7 +4,6 @@ const weekdays = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek"];
 let days = document.querySelectorAll(".day");
 
 // days[weekday].classList.toggle("shown");
-const r = document.querySelector(':root');
 
 weekday_span.innerText = weekdays[weekday];
 function prev_day() {

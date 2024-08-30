@@ -6,18 +6,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     background-color: var(--theme-background);
     height: 100%;
     overflow: hidden;
 }
 
 #days {
+    width: 500vw;
+    height: 100%;
     display: flex;
     flex-direction: row;
     position: relative;
-    width: 500vw;
-    overflow: hidden;
+    overflow: auto;
     translate: var(--day-move) 0;
     transition: translate 100ms;
 }
@@ -34,12 +34,6 @@ a, p {
 
 a[href] {
     color: var(--main-color);
-}
-
-
-
-.shown {
-    /*display: block;*/
 }
 
 .lesson {
@@ -135,4 +129,27 @@ a[href] {
         justify-content: center;
         column-gap: 5rem;
     }
+}
+
+select {
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#plan_select, h1 {
+    margin: 0;
+    /*max-width: 90vw;*/
+    border: 0;
+    font-size: 2.5rem;
+    text-align: center;
+    text-align: -webkit-center;
+    background-color: var(--main-color);
+    background-image: var(--background);
+    color: white;
+    border-radius: 0;
 }

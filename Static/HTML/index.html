@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Plan ZSE stworzony przez @grzybowski_byd</title>
+    <!-- FLASK PARSED -->
+    {% set icon_type = "material-symbols-rounded" %}
+    <script>
+        let weekday = parseInt({{ weekday }});
+    </script>
+    <!-- LOCAL -->
+    <link href='{{ url_for("static", filename="CSS/mobile.css") }}' rel="stylesheet">
+    <script>const r = document.querySelector(':root');</script>
+    <link href='{{ url_for("static", filename="CSS/variables.css") }}' rel="stylesheet">
+    <script src='{{ url_for("static", filename="JS/load_cookies.js") }}'></script>
+    <link href='{{ url_for("static", filename="CSS/transition.css") }}' rel="stylesheet">
+    <link href='{{ url_for("static", filename="CSS/v1_timetable.css") }}' rel="stylesheet">
+    <link href='{{ url_for("static", filename="CSS/v4_settings.css") }}' rel="stylesheet">
+
+    <!-- REMOTE -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <script>function nav_action(index) {
+        const r = document.querySelector(':root');
+        console.log(index)
+        r.style.setProperty("--move", `${(index - 1) * 20}vw`)
+        r.style.setProperty("--negative_move", `-${(index - 1) * 100}vw`)
+        document.querySelectorAll('.nav-icon').forEach((value) => {
+            value.style.setProperty("color", "#fff8")
+        })
+        document.querySelector(`#nav-icon${index}`).style.setProperty("color", "white")
+    }
+    </script>
+</head>
+<body>
+<div id="screen">
+    <div id="container">
+        <div class="view" id="view1">
+            {% include "v1_timetable.html" %}
+        </div>
+        <div class="view" id="view2"></div>
+        <div class="view" id="view3"></div>
+        <div class="view" id="view4">
+            {% include "v4_settings.html" %}
+        </div>
+        <div class="view" id="view5"></div>
+    </div>
+    <div id="nav">
+        {% set icons = ["calendar_month", "schedule", "campaign", "settings", "info"] %}
+        {% for icon in icons %}
+            <div class="nav_button" id="nav_button{{ loop.index }}" onclick="nav_action({{ loop.index }})">
+            <span class="{{ icon_type }} nav-icon icon" id="nav-icon{{ loop.index }}">
+            {{ icon }}
+            </span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
+<script src="{{ url_for("static", filename="JS/day_selector.js") }}"></script>
